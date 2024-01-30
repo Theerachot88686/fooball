@@ -1,7 +1,7 @@
 const prisma = require("../config/prisma");
 
 exports.getUserById = (id) => {
-  return prisma.user.findFirst({
+  return prisma.Customer.findFirst({
     where: {
       id,
     },
@@ -9,7 +9,7 @@ exports.getUserById = (id) => {
 };
 
 exports.getUserByEmail = (email) => {
-  return prisma.user.findFirst({
+  return prisma.Customer.findFirst({
     where: {
       email,
     },
@@ -17,7 +17,7 @@ exports.getUserByEmail = (email) => {
 };
 
 exports.createUser = (email, password) => {
-  return prisma.user.create({
+  return prisma.Customer.create({
     data: {
       email,
       password,
